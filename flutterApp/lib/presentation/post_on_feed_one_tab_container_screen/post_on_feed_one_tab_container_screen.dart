@@ -1,0 +1,18 @@
+import 'models/post_on_feed_one_tab_container_model.dart';import 'package:flutter/material.dart';import 'package:mdsumsul_s_application5/core/app_export.dart';import 'package:mdsumsul_s_application5/presentation/post_on_feed_one_page/post_on_feed_one_page.dart';import 'package:mdsumsul_s_application5/presentation/post_on_feed_two_page/post_on_feed_two_page.dart';import 'provider/post_on_feed_one_tab_container_provider.dart';class PostOnFeedOneTabContainerScreen extends StatefulWidget {const PostOnFeedOneTabContainerScreen({Key? key}) : super(key: key);
+
+@override PostOnFeedOneTabContainerScreenState createState() =>  PostOnFeedOneTabContainerScreenState();
+
+static Widget builder(BuildContext context) { return ChangeNotifierProvider(create: (context) => PostOnFeedOneTabContainerProvider(), child: PostOnFeedOneTabContainerScreen()); } 
+ }
+
+// ignore_for_file: must_be_immutable
+class PostOnFeedOneTabContainerScreenState extends State<PostOnFeedOneTabContainerScreen> with  TickerProviderStateMixin {late TabController tabviewController;
+
+@override void initState() { super.initState(); tabviewController = TabController(length: 3, vsync: this); } 
+@override Widget build(BuildContext context) { return SafeArea(child: Scaffold(body: SizedBox(width: double.maxFinite, child: SingleChildScrollView(child: Column(children: [_buildSixtyEight(context), Divider(), SizedBox(height: 33.v), Align(alignment: Alignment.centerLeft, child: Container(width: 256.h, margin: EdgeInsets.only(left: 19.h, right: 100.h), padding: EdgeInsets.symmetric(horizontal: 18.h, vertical: 5.v), decoration: AppDecoration.fillGray5007.copyWith(borderRadius: BorderRadiusStyle.roundedBorder27), child: SizedBox(height: 41.v, width: 209.h, child: TabBar(controller: tabviewController, labelPadding: EdgeInsets.zero, labelColor: theme.colorScheme.onPrimary.withOpacity(1), labelStyle: TextStyle(fontSize: 13.586956024169922.fSize, fontFamily: 'Mulish', fontWeight: FontWeight.w700), unselectedLabelColor: appTheme.gray500, unselectedLabelStyle: TextStyle(fontSize: 13.586956024169922.fSize, fontFamily: 'Mulish', fontWeight: FontWeight.w700), indicator: BoxDecoration(color: theme.colorScheme.primary, borderRadius: BorderRadius.circular(20.h)), tabs: [Tab(child: Text("lbl_photos".tr)), Tab(child: Text("lbl_videos".tr)), Tab(child: Text("lbl_audio".tr))])))), SizedBox(height: 711.v, child: TabBarView(controller: tabviewController, children: [PostOnFeedTwoPage(), PostOnFeedTwoPage(), PostOnFeedOnePage()]))]))))); } 
+/// Section Widget
+Widget _buildSixtyEight(BuildContext context) { return Container(width: double.maxFinite, padding: EdgeInsets.symmetric(horizontal: 19.h, vertical: 25.v), child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [CustomImageView(imagePath: ImageConstant.imgClosePrimary, height: 45.adaptSize, width: 45.adaptSize, onTap: () {onTapImgClose(context);}), Spacer(flex: 53), Padding(padding: EdgeInsets.only(top: 12.v, bottom: 6.v), child: Text("lbl_new_post".tr, style: theme.textTheme.titleMedium)), Spacer(flex: 46), Container(height: 45.v, width: 72.h, margin: EdgeInsets.only(right: 5.h), decoration: AppDecoration.outlineBlueA, child: Stack(alignment: Alignment.bottomCenter, children: [CustomImageView(imagePath: ImageConstant.imgTelevisionPrimary, height: 45.v, width: 72.h, alignment: Alignment.center), Align(alignment: Alignment.bottomCenter, child: Padding(padding: EdgeInsets.only(bottom: 12.v), child: Text("lbl_next".tr, style: CustomTextStyles.bodySmallOnPrimary_1)))]))])); } 
+
+/// Navigates to the previous screen.
+onTapImgClose(BuildContext context) { NavigatorService.goBack(); } 
+ }
