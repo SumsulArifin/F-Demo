@@ -67,7 +67,7 @@ class AuthViewModel with ChangeNotifier {
     _myRepo.signUpApi(data).then((value){
       setSignUpLoading(false);
       Utils.flushBarErrorMessage('SignUp Successfully', context);
-      Navigator.pushNamed(context, RoutesName.home);
+      Navigator.pushNamed(context, RoutesName.login);
       if(kDebugMode){
         print(value.toString());
 

@@ -1,0 +1,1 @@
+ D:\\GitHub\\F-Demo\\Mvvm-Architecture-With-Provider-with-Rest-Api-main\\.dart_tool\\flutter_build\\e9e87cd5802288806c777dcfc01e63b1\\native_assets.yaml: 
