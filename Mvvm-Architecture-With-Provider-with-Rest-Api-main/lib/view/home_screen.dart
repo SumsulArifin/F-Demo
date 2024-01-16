@@ -23,9 +23,6 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
-
-
 // import 'package:flutter/material.dart';
 
 // import 'package:mvvm/data/response/status.dart';
